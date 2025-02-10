@@ -1,7 +1,7 @@
 'use client';
-import { logoutUser } from '../../actions/auth';
-import HeaderSearchBar from './HeaderSearchBar';
-import { useCartStore } from '../../stores/cart-store';
+import { logoutUser } from '@/actions/auth';
+import HeaderSearchBar from '@/components/layout/HeaderSearchBar';
+import { useCartStore } from '@/stores/cart-store';
 import { User } from '@prisma/client';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -73,14 +73,14 @@ const Header = ({ user, categorySelector }: HeaderProps) => {
                                 </svg>
                             </button>
 
-                            <nav className='hidden md:flex gap-4 lg:gap-6 text-sm font-medium'>
+                            <nav className='hidden md:flex gap-4 lg:gap-6 text-sm font-medium text-black'>
                                 {categorySelector}
                                 <Link href='#'>Sale</Link>
                             </nav>
                         </div>
 
-                        <Link href='#' className='absolute left-1/2 -translate-x-1/2'>
-                            <span className='text-xl sm:text-2xl text-black font-bold tracking-tight'>DEAL</span>
+                        <Link href='/' className='absolute left-1/2 -translate-x-1/2 hover:-translate-y-1 hover:transition hover:duration-700'>
+                            <span className='text-xl sm:text-2xl font-bold tracking-tight text-black hover:text-purple-600 hover:transition-all hover:duration-700'>DEAL</span>
                         </Link>
 
                         <div className='flex flex-1 justify-end items-center gap-2 sm:gap-4'>
@@ -91,7 +91,7 @@ const Header = ({ user, categorySelector }: HeaderProps) => {
                                     <span className='text-sm text-gray-700 hidden md:block'>{user.email}</span>
                                     <Link
                                         href='#'
-                                        className='text-xs sm:text-sm font-medium text-gray-700 hover:text-gray-900'
+                                        className='text-xs sm:text-sm font-medium text-gray-700 hover:text-gray-900 hover:-translate-y-1 hover:transition hover:duration-700'
                                         onClick={async (e) => {
                                             e.preventDefault();
                                             await logoutUser();
@@ -103,16 +103,16 @@ const Header = ({ user, categorySelector }: HeaderProps) => {
                                 </div>
                             ) : (
                                 <React.Fragment>
-                                    <Link href='/auth/sign-in' className='text-xs sm:text-sm font-medium text-gray-700 hover:text-gray-900'>
+                                    <Link href='/auth/sign-in' className='text-xs sm:text-sm font-medium text-gray-700 hover:text-gray-900 hover:-translate-y-1 hover:transition hover:duration-700'>
                                         Sign In
                                     </Link>
-                                    <Link href='/auth/sign-up' className='text-xs sm:text-sm font-medium text-gray-700 hover:text-gray-900'>
+                                    <Link href='/auth/sign-up' className='text-xs sm:text-sm font-medium text-gray-700 hover:text-gray-900 hover:-translate-y-1 hover:transition hover:duration-700'>
                                         Sign Up
                                     </Link>
                                 </React.Fragment>
                             )}
 
-                            <button onClick={() => open()} className='text-gray-700 hover:text-gray-900 relative'>
+                            <button onClick={() => open()} className='text-gray-700 hover:text-gray-900 relative hover:-translate-y-1 hover:transition hover:duration-700'>
                                 <svg xmlns='http://www.w3.org/2000/svg' className='h-5 w-5 sm:h-6 sm:w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
                                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z' />
                                 </svg>
