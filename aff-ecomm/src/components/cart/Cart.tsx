@@ -52,7 +52,7 @@ const CartItem = ({ item }: { item: CartItemType }) => {
               <select
                 value={item.quantity}
                 onChange={(e) => updateQuantity(item.id, Number(e.target.value))}
-                className="border border-purple-200 rounded-md px-2 py-1 text-sm bg-white"
+                className="border border-purple-200 rounded-md px-2 py-1 text-sm text-gray-800 bg-white"
               >
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
                   <option key={`cart-qty-slct-${item.id}-${num}`} value={num}>

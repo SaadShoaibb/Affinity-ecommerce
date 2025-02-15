@@ -5,8 +5,10 @@ import Header from '@/components/layout/Header';
 import { getCurrentSession } from '@/actions/auth';
 import { SanityLive } from '@/sanity/lib/live';
 import HeaderCategorySelector from '@/components/layout/HeaderCategorySelector';
+import Cart from '@/components/cart/Cart';
 import Script from 'next/script';
 import { Suspense } from 'react';
+import AnalyticsTracker from '@/components/layout/AnalyticsTracker';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -31,16 +33,19 @@ const RootLayout = async ({
                 />
                 <Script
                     src='https://cloud.umami.is/script.js'
-                    data-website-id='(YOUR UMAMI WEBSITE ID)'
+                    data-website-id='e6e9c133-5635-4466-b7d9-f9b650c28aed'
                     strategy='beforeInteractive'
                 />
 
                 <Suspense>
-                
+                    <AnalyticsTracker
+                        user={user}
+                    />
                 </Suspense>
 
                 {children}
 
+                <Cart />
                 <SanityLive />
             </body>
         </html>

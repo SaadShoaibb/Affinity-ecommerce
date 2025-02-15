@@ -80,7 +80,7 @@ const Header = ({ user, categorySelector }: HeaderProps) => {
                         </div>
 
                         <Link href='/' className='absolute left-1/2 -translate-x-1/2 hover:-translate-y-1 hover:transition hover:duration-700'>
-                            <span className='text-xl sm:text-2xl font-bold tracking-tight text-black hover:text-purple-600 hover:transition-all hover:duration-700'>DEAL</span>
+                            <span className='text-xl sm:text-2xl font-bold tracking-tight text-black hover:text-purple-600 hover:transition-all hover:duration-700'>Affinity</span>
                         </Link>
 
                         <div className='flex flex-1 justify-end items-center gap-2 sm:gap-4'>
