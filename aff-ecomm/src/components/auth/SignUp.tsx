@@ -17,8 +17,8 @@ const SignUp = ({ action }: SignUpProps) => {
 
     return (
         <Form action={formAction} className='max-w-md mx-auto my-16 p-8 bg-white rounded-lg shadow-md'>
-            <h1 className='text-2xl font-bold text-center mb-2'>Join the DEAL Revolution!</h1>
-            <p className='text-center text-sm text-rose-600 font-semibold mb-2'>🔥 LIMITED TIME OFFER 🔥</p>
+            <h1 className='text-2xl font-bold text-center mb-2 text-black'>Join the DEAL Revolution!</h1>
+            <p className='text-center text-sm text-purple-600 font-semibold mb-2'>🔥 LIMITED TIME OFFER 🔥</p>
             <p className='text-center text-sm text-gray-600 mb-6'>Sign up now and get 90% OFF your first order!</p>
 
             <div className='space-y-6'>
@@ -64,7 +64,7 @@ const SignUp = ({ action }: SignUpProps) => {
                 <button
                     type='submit'
                     disabled={isPending}
-                    className={`w-full bg-rose-600 text-white py-3 rounded-md hover:bg-rose-700 transition-colors font-medium flex items-center justify-center gap-2 ${isPending ? 'cursor-not-allowed' : ''}`}
+                    className={`w-full bg-purple-600 text-white py-3 rounded-md hover:bg-purple-700 transition-colors font-medium flex items-center justify-center gap-2 ${isPending ? 'cursor-not-allowed' : ''}`}
                 >
                     {isPending ? (
                         <React.Fragment>
@@ -77,7 +77,7 @@ const SignUp = ({ action }: SignUpProps) => {
                 </button>
 
                 {state?.message && state.message.length > 0 && (
-                    <p className='text-center text-sm text-red-600'>
+                    <p className='text-center text-sm text-purple-600'>
                         {state.message}
                     </p>
                 )}

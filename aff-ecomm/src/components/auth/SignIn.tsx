@@ -17,8 +17,8 @@ const SignIn = ({ action }: SignInProps) => {
 
     return (
         <Form action={formAction} className='max-w-md mx-auto my-16 p-8 bg-white rounded-lg shadow-md'>
-            <h1 className='text-2xl font-bold text-center mb-2'>Welcome Back!</h1>
-            <p className='text-center text-sm text-rose-600 font-semibold mb-2'>🔥 MEMBER EXCLUSIVE 🔥</p>
+            <h1 className='text-2xl font-bold text-black text-center mb-2'>Welcome Back!</h1>
+            <p className='text-center text-sm text-purple-600 font-semibold mb-2'>🔥 MEMBER EXCLUSIVE 🔥</p>
             <p className='text-center text-sm text-gray-600 mb-6'>Sign in to access your exclusive member deals.</p>
 
             <div className='space-y-6'>
@@ -49,7 +49,7 @@ const SignIn = ({ action }: SignInProps) => {
                         name='password'
                         autoComplete='new-password'
                         required
-                        className='w-full px-4 py-3 border border-gray-200 rounded-md focus:ring-2 focus:ring-black focus:border-transparent transition-colors'
+                        className='w-full px-4 py-3 border border-gray-200 text-black rounded-md focus:ring-2 focus:ring-black focus:border-transparent transition-colors'
                         placeholder='Create a password'
                     />
                 </div>
@@ -64,7 +64,7 @@ const SignIn = ({ action }: SignInProps) => {
                 <button
                     type='submit'
                     disabled={isPending}
-                    className={`w-full bg-rose-600 text-white py-3 rounded-md hover:bg-rose-700 transition-colors font-medium flex items-center justify-center gap-2 ${isPending ? 'cursor-not-allowed' : ''}`}
+                    className={`w-full bg-purple-600 text-white py-3 rounded-md hover:bg-purple-700 transition-colors font-medium flex items-center justify-center gap-2 ${isPending ? 'cursor-not-allowed' : ''}`}
                 >
                     {isPending ? (
                         <React.Fragment>
@@ -77,7 +77,7 @@ const SignIn = ({ action }: SignInProps) => {
                 </button>
 
                 {state?.message && state.message.length > 0 && (
-                    <p className='text-center text-sm text-red-600'>
+                    <p className='text-center text-sm text-purple-600'>
                         {state.message}
                     </p>
                 )}
