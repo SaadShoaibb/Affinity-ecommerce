@@ -33,7 +33,7 @@ const SignIn = ({ action }: SignInProps) => {
                         name='email'
                         autoComplete='email'
                         required
-                        className='w-full px-4 py-3 border border-gray-200 rounded-md focus:ring-2 focus:ring-black focus:border-transparent transition-colors'
+                        className='w-full px-4 py-3 border text-black border-gray-200 rounded-md focus:ring-2 focus:ring-black focus:border-transparent transition-colors'
                         placeholder='Enter your email'
                     />
                 </div>

@@ -36,15 +36,15 @@ const CategoryPage = async ({ params }: CategoryPageProps) => {
           <div className="flex items-center justify-center gap-4 text-sm">
             <div className="flex items-center gap-2">
               <span className="text-purple-600">🚚</span>
-              <span>Free Shipping</span>
+              <span className="text-gray-800">Free Shipping</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-purple-600">⭐️</span>
-              <span>Top Rated</span>
+              <span className="text-gray-800">Top Rated</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-purple-600">💰</span>
-              <span>Best Prices</span>
+              <span className="text-gray-800">Best Prices</span>
             </div>
           </div>
         </div>

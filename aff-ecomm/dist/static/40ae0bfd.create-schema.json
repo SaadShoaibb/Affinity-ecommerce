@@ -1,0 +1,248 @@
+[
+  {
+    "fields": [
+      {
+        "name": "code",
+        "type": "string"
+      },
+      {
+        "name": "discountPercentage",
+        "type": "number",
+        "title": "Discount Percentage (%)"
+      },
+      {
+        "name": "expirationDate",
+        "type": "date"
+      }
+    ],
+    "name": "promotionCode",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "to": [
+          {
+            "type": "promotionCode"
+          }
+        ],
+        "name": "code",
+        "type": "reference"
+      }
+    ],
+    "name": "promotionCampaign",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      }
+    ],
+    "name": "productCategory",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "name": "price",
+        "type": "number"
+      },
+      {
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "to": [
+          {
+            "type": "productCategory"
+          }
+        ],
+        "name": "category",
+        "type": "reference"
+      }
+    ],
+    "name": "product",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "name",
+        "type": "string",
+        "title": "Full Name"
+      },
+      {
+        "name": "line1",
+        "type": "string",
+        "title": "Address Line 1"
+      },
+      {
+        "name": "line2",
+        "type": "string",
+        "title": "Address Line 2"
+      },
+      {
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "name": "postalCode",
+        "type": "string"
+      },
+      {
+        "name": "country",
+        "type": "string"
+      }
+    ],
+    "name": "shippingAddress",
+    "type": "object"
+  },
+  {
+    "fields": [
+      {
+        "to": [
+          {
+            "type": "product"
+          }
+        ],
+        "name": "product",
+        "type": "reference"
+      },
+      {
+        "name": "quantity",
+        "type": "number"
+      },
+      {
+        "name": "price",
+        "type": "number"
+      }
+    ],
+    "name": "orderItem",
+    "type": "object"
+  },
+  {
+    "fields": [
+      {
+        "name": "orderNumber",
+        "type": "string"
+      },
+      {
+        "name": "orderDate",
+        "type": "datetime"
+      },
+      {
+        "name": "customerId",
+        "type": "string",
+        "title": "Customer ID"
+      },
+      {
+        "name": "customerName",
+        "type": "string"
+      },
+      {
+        "name": "customerEmail",
+        "type": "string"
+      },
+      {
+        "name": "stripeCustomerId",
+        "type": "string",
+        "title": "Stripe Customer ID"
+      },
+      {
+        "name": "stripeCheckoutSessionId",
+        "type": "string",
+        "title": "Stripe Checkout Session ID"
+      },
+      {
+        "name": "stripePaymentIntentId",
+        "type": "string",
+        "title": "Stripe Payment Intent ID"
+      },
+      {
+        "name": "totalPrice",
+        "type": "number",
+        "title": "Total Price (USD)"
+      },
+      {
+        "name": "shippingAddress",
+        "type": "shippingAddress"
+      },
+      {
+        "of": [
+          {
+            "type": "orderItem"
+          }
+        ],
+        "name": "orderItems",
+        "type": "array"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Processing",
+              "value": "PROCESSING"
+            },
+            {
+              "title": "Shipped",
+              "value": "SHIPPED"
+            },
+            {
+              "title": "Delivered",
+              "value": "DELIVERED"
+            },
+            {
+              "title": "Cancelled",
+              "value": "CANCELLED"
+            }
+          ]
+        },
+        "name": "status",
+        "type": "string",
+        "title": "Order Status"
+      }
+    ],
+    "name": "order",
+    "type": "document"
+  }
+]
